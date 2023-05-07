@@ -1,1 +1,21 @@
+// Привет дорогой проверяющий, есть большая вероятность того что изза праздников я могу не успеть доделать .
+// Пожалуста проверь работу в среду вечером .
+//Или оставь для связи свой ник в дискорд ....
 
+
+const fs = require('fs');
+const fsPromises = require('fs/promises');
+const path = require('path');
+
+let copyFolderName = path.join(__dirname, 'files-copy');
+let folderName = path.join(__dirname, 'files');
+
+fs.mkdir(copyFolderName, { recursive: true }, (err) => {
+  if (err) console.log(err);
+});
+
+fs.readdir(folderName, { withFileTypes: true }, (err, files) => {
+  if (err) console.log(err);
+
+
+  // Асинхроная функция,Ожидане,чтение
