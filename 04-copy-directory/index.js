@@ -18,18 +18,15 @@ fs.readdir(folderName, { withFileTypes: true }, (err, files) => {
       fsPromises.unlink(copyFileName);
     });
 
-      await files.forEach((file) => {
+    await files.forEach((file) => {
       let fileName = path.join(__dirname, 'files', file.name);
       let copyFileName = path.join(__dirname, 'files-copy', file.name);
       fsPromises.copyFile(fileName, copyFileName);
     });
   }
 
-   fs.readdir(copyFolderName, (err, allCopyFiles) => {
+fs.readdir(copyFolderName, (err, allCopyFiles) => {
     if (err) console.log(err);
     copyFiles(files, allCopyFiles);
   });
 });
-
-
-

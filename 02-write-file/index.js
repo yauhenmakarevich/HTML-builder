@@ -9,7 +9,6 @@ const rl = readline.createInterface({
 });
 
 console.log('You can type something:\n');
-///Уточнить и проверить
 rl.on('line', (input) => {
   if (input === 'exit') {
     rl.close();
@@ -18,4 +17,3 @@ rl.on('line', (input) => {
   }
 });
 process.on('exit', () => console.log('\nGood luck!'));
-///Уточнить и проверить
